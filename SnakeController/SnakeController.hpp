@@ -29,6 +29,8 @@ public:
     Controller(Controller const& p_rhs) = delete;
     Controller& operator=(Controller const& p_rhs) = delete;
 
+    Controller::Segment makeNewHead(Segment const& currentHead);
+
     void receive(std::unique_ptr<Event> e) override;
 
 private:
