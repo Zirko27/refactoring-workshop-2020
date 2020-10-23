@@ -228,7 +228,7 @@ void Controller::receive(std::unique_ptr<Event> e)
     case 0x40:
         handleFoodPositionChange(*static_cast<EventT<FoodInd> const&> (*e));
         break;
-    case 0x41:
+    case 0x42:
         handleNewFood(*static_cast<EventT<FoodResp> const&> (*e));
         break;
     default:
