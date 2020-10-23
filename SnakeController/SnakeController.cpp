@@ -214,7 +214,7 @@ void Controller::handleFoodResp(std::unique_ptr<Event> e)
     updateFoodPosition(requestedFood.x, requestedFood.y, []{});
 }
 
-void Controller::handlePauseInd(std::unique_ptr<Event> e)
+void Controller::handlePauseInd()
 {
     m_paused = not m_paused;
 }
@@ -237,7 +237,7 @@ void Controller::receive(std::unique_ptr<Event> e)
         case FoodResp::MESSAGE_ID:
             return handleFoodResp(std::move(e));
         case PauseInd::MESSAGE_ID:
-            return handlePauseInd(std::move(e));
+            return handlePauseInd();
         default:
             throw UnexpectedEventException();
     }

@@ -53,7 +53,7 @@ private:
     void handleDirectionInd(std::unique_ptr<Event>);
     void handleFoodInd(std::unique_ptr<Event>);
     void handleFoodResp(std::unique_ptr<Event>);
-    void handlePauseInd(std::unique_ptr<Event>);
+    void handlePauseInd();
 
     bool isSegmentAtPosition(int x, int y) const;
     Segment calculateNewHead() const;
